@@ -5,5 +5,8 @@ block content
   div.container
     if ticket
       h1 Editing HD#{ticket.id}
+        form(action="/tickets/#{ticket.id}/update" method="POST")
+          input(type="hidden" name="is_open" value="false")
+          input(type="submit" value="Close Ticket")
       form(action="/tickets/#{ticket.id}/update" method="POST")
         include form.jade
